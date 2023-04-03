@@ -1,0 +1,33 @@
+{% load static %}
+<html>
+    <head>
+        <title>User_details</title>
+        <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+    </head>
+   <body>
+          <h3> User Data</h3>
+          <table border="2px" class="table table-dark">
+            <thead>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Age</th>
+                <th>Sallary</th>
+                <th>Designaion</th>
+                <th>IS_active</th>
+            </thead>
+            {% for d in user_data %}
+            <tr>
+                <td>{{d.id}}</td>
+                <td>{{d.name}}</td>
+                <td>{{d.age}}</td>
+                <td>{{d.sallary}}</td>
+                <td>{{d.designation}}</td>
+                <td>{{d.is_active}}</td>
+            </tr>
+          </table>
+          {% endfor %}
+
+          <a href="{% url 'home_page' %}" class="brn btn-primary">user page</a>
+
+   </body>
+</html>

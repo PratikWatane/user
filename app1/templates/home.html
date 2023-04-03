@@ -1,0 +1,24 @@
+{% load static %}
+
+<html>
+    <head>
+        <title>Registration</title>
+        <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+    </head>
+
+    <body>
+        <h2>Library Application: </h2><hr>
+
+     <form method="post">
+       {% csrf_token %}
+       Name : <input type="text" name="name"><br><br>
+       Age : <input type="number" , name="age"><br><br>
+       Sallary : <input type="number" name="sallary"><br><br>
+       Designation :<input type="text" name="designation"><br><br>
+       Is_active : Yes  <input type="radio" name="is_active" value="yes"> No <input type="radio" name="is_active" value="no"><br><br>
+       <input type="submit" value="submit">
+
+     </form>   
+     <a href="{% url 'show_details' %}" class="btn btn-primary">User Data</a>
+    </body>
+</html>
